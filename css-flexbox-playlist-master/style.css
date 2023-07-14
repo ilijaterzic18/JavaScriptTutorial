@@ -1,0 +1,86 @@
+*{
+    font-family: verdana;
+    margin: 0;
+}
+
+body{
+    background: #eee;
+}
+
+.wrapper{
+    width: 100%;
+    max-width: 960px;
+    /* margin: 0 auto; */
+}
+
+.box {
+    height: 100px;
+    /* min-width: 200px; */
+    /* flex-grow: 1; */
+    /* flex-grow ce povecati sve iteme flex-containter-a tako da zauzimaju
+       ceo prostor flex box-a*/
+    /* flex-grow: 1; */
+    /* ovde ce flex-grow svim elementima dati istu velicinu, ali ako ga stavimo
+       u pojedinacne elemente onda ce im dati razlicitu
+       broj koji mu prosledjujemo predstavlja flex-rate
+       odnosno ovo ne daje tacnu velicinu niti njenu proropciju nego
+       odredjuje rate kojim ce se povecavati prilikom povecavanja prozora*/
+       /* flex-basis radi slicno kao min-width, sirina sa kojom pocinju (valjda) */
+       /* razlika izmedju min-width i flex-basis-a je sto ce sa min width da
+          krene da izlazi sa tranice ako nema mesta da stane kada skupljamo prozor,
+          a sa flex-basis ce smanjiti dimenzije samog elementa */
+       /* flex-basis: 200px; */
+       /* flex-basis, flex-grow i flex-shrink mogu da se svi u kombinuju u flex
+          redom atributu idu ovako flex: grow srink basis */
+       /* flex: 1 0 200px; */
+       flex: 0 0 100px;
+}
+
+.one {
+    background-color: red;
+    /* flex-grow: 1; */
+    /* flex-shrink: 1; */
+    /* flex-shring - sto je veci broj vise ce da se smanjuje sa smanjivanjem prozora */
+    /* flex-basis: 100px; */
+}
+
+.two {
+    background-color: blue;
+    /* flex-grow: 2; */
+    /* flex-shrink: 2; */
+    /* flex-basis: 200px; */
+}
+
+.three {
+    background-color: green;
+    /* flex-grow: 3; */
+    /* flex-shrink: 3; */
+    /* flex-basis: 300px; */
+}
+
+/* Kad se pravi flexbox, prvo treba da se napravi container, pa onda su u njemu elementi */
+/* nakon ove linije koda bice svi jedni do drugog
+   sva deca flex elementa postaju flex itemi i rasporedjuju se s leva na desno */
+.flex-container {
+    display: flex;
+    background: #fff;
+    /* kada smanjujemo ekran preko min-width onda ce elementi izaci sa ekrana 
+       i morace da se skroluje levo desno kako bi se videlo sve;
+       kako bi se ovo izbeglo, koristi se flex-wrap: wrap kako bi element
+       koji bi izasao sa stranice, umesto toga presao u novi red
+       po defaultu je flex-wrap: nowrap */
+    flex-wrap: wrap;
+
+    /* flex-flow ce promeniti kako su poredjani elementi u flex-box-u
+       kad uradimo flex-flow: column; onda komanda flex: 0 0 100px; ovaj deo 100px se nece
+       odnositi na sirinu nego na duzinu, justify-content: center; ce ih centrirati
+       po vertikali a ne po horiznotali
+       flex-flow: row-reverse ili column-reverse znaci da ce elementi poceti od kraja*/
+    /* justify-content alajnuje elemente po X-osi
+       align-items alajnuje elemente pod Y-osi
+       ako stavimo flex-flow: column, onda ce justify-content i align-items raditi obrnuto */
+    flex-flow: column;
+    height: 600px;
+    justify-content: center;
+}
+

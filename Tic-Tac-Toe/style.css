@@ -1,0 +1,47 @@
+h1 {
+    text-align: center;
+}
+
+#playerTurn {
+    text-align: center;
+    
+}
+
+#errorMessage {
+    text-align: center;
+    visibility: hidden;
+    color: red;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#game {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 5px solid black;
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#reset {
+    height: 50px;
+    width: 200px;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-style: bold;
+    background-color: crimson;
+    font-size: 20px;
+}

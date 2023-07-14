@@ -1,0 +1,19 @@
+body{
+    background-color: black;
+}
+h1{
+    color:aqua;
+    text-align: center;
+}
+.divs{
+    position: center;
+    text-align: center;
+}
+#addedItems{
+    position: relative;
+    top: 30px;
+}
+.polja{
+    width: 200px;
+    
+}

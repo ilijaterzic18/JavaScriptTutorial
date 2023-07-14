@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Ovaj tag sluzi da na mobilnom telefonu bude lepo vidljivo sve -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS Tutorial</title>
+    
+</head>
+<!-- Inline elements (HTML) - ne zauzimaju vise mesta nego sto imaju contenta
+Block elements (HTML) - zauzimaju celu sirinu -->
+
+<!-- CHROME TOOLS -->
+<!-- Desni klik -> inspect i onda mogu na desni klik HTML tagvoe da im
+    uzimam selektore, brisem ih, vidim kako bi izgledalo, menjam itd
+    
+    Kod styles u element.style mozemo da menjamo CSS
+    Kad je nesto precrtano u stilovima to znaci da je override-ovano necim
+   
+    U Sources tabu mozemo da udjemo u sve fajlove i odatle da ih menjamo i
+    vidimo sta  ce da se desi
+    Tamo ima Filesystem tab gde mozes da dodas folder pa u njemu da kucas kod
+    i onda ti to ostane sve sacuvano na kompu
+
+    
+-->
+
+<body>
+    <p> Obican tekst <strong>boldovan tekst</strong> <em>iskosen tekst</em> <small>mali tekst</small></p>
+    <h1>Heding 1</h1>
+    <h2>Heding 2</h2>
+    <h3>Heding 3</h3>
+    <h4>Heding 4</h4>
+    <h5>Heding 5</h5>
+    <h6>Heding 6</h6>
+
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ul>
+    <hr>
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ol>
+    <span>Span</span><br>
+    <img src="how sdcompanies grow.png" alt="ako se ne ucita slika pise ovo"><br>
+    <a
+        href="https://best.aliexpress.com/?aff_fcid=7960712e6a19445e9313243df4f636b6-1684331212431-07273-_Ao4Yar&tt=CPS_NORMAL&aff_fsk=_Ao4Yar&aff_platform=portals-tool&sk=_Ao4Yar&aff_trace_key=7960712e6a19445e9313243df4f636b6-1684331212431-07273-_Ao4Yar&terminal_id=26586ecd959e42b6bdaf2838aae829fc&afSmartRedirect=y">link
+        ka ali ekspresu</a><br>
+    <a href="o nama.html">ovo vodi ka o nama</a>
+    <blockquote cite="https://www.goodreads.com/quotes">Ovo je neki citat</blockquote>
+
+    <!-- HTML FORMS -->
+    <hr>
+    <h1>HTML Forms</h1>
+    <form>
+        <label for="username">Ubaci username: </label>
+        <input type="text" id="username" name="username" required><br>
+        <label for="e-mail">Ubaci e-mail: </label>
+        <input type="email" id="email" name="email" required><br>
+        <label for="password">Ubaci sifru: </label>
+        <input type="password" id="password" name="password" required><br> <!--name sluzi nesto za backend, dodatno definise ovo-->
+        
+        <!-- Radio button -->
+        <p>Biraj godine: </p>
+        <input type="radio" name="age" value="0-25" id="opiton-1"> <!--Value se dodaje da bi program mogao da prepozna koji value da uzme ako se radio checkira-->
+        <label for="opiton-1">0-25</label>
+        <input type="radio" name="age" value="26-50" id="opiton-2"> <!--Value se dodaje da bi program mogao da prepozna koji value da uzme ako se radio checkira-->
+        <label for="opiton-2">26-50</label>
+        <input type="radio" name="age" value="51+" id="opiton-3"> <!--Value se dodaje da bi program mogao da prepozna koji value da uzme ako se radio checkira-->
+        <label for="opiton-1">51+</label>
+        <br><br>
+        <!-- Combo box -->
+        <label for="quesiton">Izaberi sejfti pitanje: </label>
+        <select name="quesiton" id="quesiton">
+            <option value="q1">Omiljene carape koje su boje?</option>
+            <option value="q2">Koja bi biljka bio?</option>
+            <option value="q3">Šta ima batice?</option>
+        </select>
+        <br><br>
+        <label for="answer">Odgovori na sejfti pitanje: </label>
+        <input type="text" name="answer" id="answer">
+        <br><br>
+
+        <label for="bio">Ubaci sta hoces: </label><br>
+        <textarea name="bio" id="bio" cols="30" rows="10" placeholder="neki plejsholder..."></textarea> <!--cols i rows sluzi za velicinu-->
+
+        <label for=""></label>
+        <br><br>
+        <input type="submit" value="submituj formu"> <!--dugme: kad se klikne na njega zapamtice formu i to moci da posalje serveru (vidi link kad kliknes na njega)-->
+        <!-- ako hocemo da dugme validira stvari i da budu obavezne, treba da ubacimo required u te tagove -->
+    </form>
+    <hr>
+    <!-- Semantic tags are used to give the HTML code mode meaning -->
+    <!-- Examples: -->
+    <main>For the amin content of a webpage, unique to that page</main>
+    <section>Defines a certain section of a webpage</section>
+    <article>Defines a bit of content which makes upa an article</article>
+    <aside>Defines some content related to something else</aside>
+    <header>For the header of a website (contains nav, title etc)</header>
+    <footer>For the footer of a website</footer>
+
+    <ul>CSS position attribute
+        <li>position: static - default</li>
+        <li>position: relative <img src="positionReletive.png" alt=""></li>
+        <li>positoin: fixed <img src="positionFixed.PNG" alt=""></li>
+        <li>position: absolute <img src="positionAbsolute.PNG" alt=""></li>
+        <li>position: sticky</li>
+    </ul>
+</body>
+
+</html>

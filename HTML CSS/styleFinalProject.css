@@ -1,0 +1,325 @@
+/* Position property
+Values:
+    -static - ovaj je po default-u (prati normalan flow)
+    -relative - kada stavimo ovaj atribut, onda elementu mozemo da 
+                menjamo poziciju relativno od njegove originalne pozicije
+    -fixed - fiksira element da se uvek prikazuje na istom mestu na ekranu 
+             (kao navbar kad uvek bleji gore)
+    -absolute - pozicioniranje elementa absolutno u relaciji sa svojim
+                najblizim roditeljem (koji takodje ima position property
+                koji nije static)
+    -sticky - mesavina static i fixed */
+
+/* header {
+    position: relative;
+    left: 100px;
+    left: 100px; je radilo tek nakon sto smo dodali position: relative
+} */
+
+/* ovaj deo smo stavili da postavimo nase default vrednosti umesto da
+   uzimamo od browsera */
+body,
+ul,
+li,
+hi,
+h2,
+a {
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+}
+
+header {
+    background-color: #f63232;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    /* z-index sluzi da stavljamo elemente ispred ili iza drugih elemenata
+       defalut value za z index je 0 */
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+header h1 {
+    color: white;
+    border: 8px solid white;
+    padding: 6px 12px;
+    /* kod padding-a prva vrednost je za gore i dole, druga za levo i desno */
+    display: inline-block;
+    border-radius: 36px;
+}
+
+.banner {
+    position: relative;
+
+}
+
+.banner img {
+    max-width: 100%;
+    /* ovo znaci da nece moci da se poveca vise od 100% velicine svog roditelja
+       u nasem slucaju roditelj je window */
+}
+
+/* da bismo pomerali tekst, taj tekst mora da ima parenta ciji position atribut nije static */
+.banner .welcome {
+    position: absolute;
+    /* kada pozicioniramo nesto na absolute, mi ga onda vadimo iz normalnog flow-a dokumenta
+       i gubimo prostor u kome je originalno bio */
+    left: 0px;
+    top: 30%;
+    background-color: #feb614;
+    color: white;
+    padding: 30px;
+}
+
+.banner h2 {
+    font-size: 60px;
+}
+
+.banner h2 span {
+    font-size: 1.3em;
+    /* em nasledjuje vrednost roditelja  i povecava je toliko puta */
+}
+
+nav {
+    background-color: #f4f4f4;
+    padding: 20px;
+    /* samo po sebi position: sticky sada nece nista uraditi jer se ne vidi
+       od Crash club-a crvenog, zato treba da se doda top: ?px, namikari se */
+    position: sticky;
+    top: 150px;
+}
+
+nav ul {
+    /* ovu liniju smo ubacili da ne bi elementi liste isli u novi red */
+    white-space: nowrap;
+    max-width: 1200px;
+    /* gore i dole margina 0, levo i desno je 100
+       ovo znaci da ako ima bilo kakvog prostora koji je ostao levo i desno
+       automatski ce se popuniti, tako da nema vise tog prostora i
+       centrirati element*/
+    margin: 0 auto;
+}
+
+/* position: sticky sluzi da jednom kada doskrolujemo do nekog elementa kad nastavimo da
+   skrolamo dole, on ostane zalepljen za vrh i ne moze se skloniti */
+nav li {
+    /* da zauzima 25% prostora svog parent-a, stavili smo 25% jer ih je 4 */
+    width: 25%;
+    display: inline-block;
+    font-size: 24px;
+}
+
+nav li a {
+    text-decoration: none;
+    color: #4b4b4b;
+}
+
+nav li a.join {
+    color: #f63232;
+}
+
+main {
+    /* ovo deluje kontradiktorno, ali nije jer ako imamo uredjaj koji ima 1200px
+       onda se width biti 1200px, ali ako je uredjaj na primer 900px, onda je ovo
+       max-width 100% 900px i nece doci do 1200px */
+    max-width: 100%;
+    width: 1200px;
+    margin: 80px auto;
+    padding: 0 40px;
+    /* zbog padding-a width nece biti 100%, nego 100% + padding;
+       kako bi se to resilo koristimo box-sizing*/
+    box-sizing: border-box;
+    /* box-sizing ce uracunati padding u onih 100%, tako da sada max width
+       nece biti 100% + padding nego samo 100%  */
+}
+
+article h2 {
+    color: #f63232;
+    font-size: 48px;
+}
+
+article p {
+    /* razmak izmedju linija */
+    line-height: 2em;
+    color: #4b4b4b;
+}
+
+.images {
+    text-align: center;
+    margin: 80px 0;
+    white-space: nowrap;
+}
+
+.images li {
+    display: inline-block;
+    width: 40%;
+    margin: 20px 5%;
+}
+
+.images li img {
+    max-width: 100%;
+}
+
+section.join {
+    background: #f4f4f4;
+    text-align: center;
+    padding: 60px 20px;
+    color: #4b4b4b
+}
+
+.join h2 {
+    font-size: 36px;
+}
+
+form input {
+    margin: 20px 0;
+    padding: 10px 20px;
+    font-size: 24px;
+    border-radius: 28px;
+    border: 4px solid white;
+}
+
+footer {
+    background: #f63232;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+
+
+/* PSEUDO KLASE
+   koriste se za stilizaciju elemenata kada su u odredjenom stanju (hover, focus, first child of a parent)
+   primeri:
+    :hover
+    :focus - kad se klikne
+    :first-child
+    :valid - kad je dobar unos (npr. za e-mail)
+    ...ima ih dosta i mogu se potraziti na w3schools, kucam pseudo-class*/
+
+nav li a:hover {
+    text-decoration: underline;
+    background-color: pink;
+    padding: 3px;
+}
+
+/* kada govorimo o mrdanju stvari iz njihove originalne pozicije
+   govorimo o koriscenju position: relative */
+.images li:hover {
+    position: relative;
+    top: -4px;
+}
+
+form input:focus {
+    border: 4px dashed #4b4b4b;
+    /* outline: none smo stavili da bi se sklonio onaj originalni outline
+       koji se pojavi kad se klikne na input field */
+    outline: none;
+}
+
+form input:valid {
+    border: 4px solid green;
+}
+
+nav li:first-child {
+    border: 3px solid #f63232;
+}
+
+/* PSEUDO ELEMENTI
+   pomazu nam da stilizujemo i ubacujemo stvari u elemente
+   koji su deo durgih elemenata (npr. slova u paragrafu) */
+
+article p::first-line {
+    font-weight: bold;
+    ;
+}
+
+section.join p::first-letter {
+    font-size: 1.5em;
+}
+
+p::selection {
+    /* kad se obgrli misem (kao kad hoces da kopiras) onda je ovakav */
+    background-color: red;
+    color: white;
+}
+
+p::after {
+    /* dodace ovaj sadrzaj posle svakog p elementa */
+    content: '..........';
+}
+
+p::before {
+    /* dodace ovaj sadrzaj pre svakog p elementa */
+    content: 'cao macko'
+}
+
+/* RESPONSIVE DESIGN */
+/* Viewport meta tag (HTML) - Tells the browser what width the viewport should be */
+/* Responsive images - Only load smaller images for mobile devices */
+
+/* Media Queries - tell browser how to style an element at particular viewpoint dimensions */
+
+@media screen and (max-width: 1400px) {
+    .banner .welcome h2 {
+        /* sve sto ne override-ujemo se cuva iz starog */
+        font-size: 40px;
+    }
+
+    nav li {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .banner .welcome h2 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .banner .welcome {
+        /* da bi otislo ispod slike */
+        position: relative;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .banner .welcome br {
+        /* sklonili smo break da Crash Club ne bi islo u novi red */
+        display: none;
+    }
+
+    .banner .welcome span {
+        font-size: 1em;
+    }
+
+    .images li {
+        width: 100%;
+        margin: 20px auto;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    nav li {
+        /* pravimo nav bar da bude sve jedno ispod drugog */
+        position: relative;
+        display: block;
+        width: 100%;
+        margin: 12px;
+    }
+
+    header {
+        position: relative;
+    }
+
+    nav {
+        /* ovo smo staivli da bi nav bar blejao gore skorz a ne na sredini
+           posto je sticky */
+        top: 0;
+    }
+}

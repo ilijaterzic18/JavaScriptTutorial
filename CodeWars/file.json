@@ -1,0 +1,6 @@
+{
+    "name": "Sonic",
+    "platform": "SEGA",
+    "year": 1991,
+    "ispisi": "console.log('Hello')"
+}

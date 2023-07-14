@@ -1,0 +1,106 @@
+/* one stvari ispred zagrada se zovu selektori */
+/* deklaracije su uredjeni parovi nesto: neka vrednost */
+h1 {
+    color: orange;
+    background-color: slategray;
+    font-size: 20px;
+    /* text-decoration: line-through; Precrtan tekst */
+    /* text-decoration: none; - da se sklone sve dekoracije
+    text-decoration: underline; /*podvucen tekst*/
+    font-family: arial;
+    /*treba da se koriste web safe fonts - ovo treba da se izgugla kad se postavlja*/
+    text-align: center;
+    /* text-align: right;
+    text-align: left; */
+}
+
+p {
+    color: slategray;
+    text-align: right;
+    line-height: 30px;
+    /*razmak izmedju linija teksta, kao prored*/
+    letter-spacing: 2px;
+    /*razmak izmedju slova*/
+    column-count: 2;
+    /*u koliko kolona hocemo da tekst bude podeljen*/
+    column-gap: 60px;
+    /*koliko zelimo da kolone budu razmaknute*/
+}
+
+ul {
+    /* border-width: 3px; ovo samo nece nista uraditi, treba da se dodaju ova 2 reda ispod
+    border-style: solid; nakon ovoga ce da se vidi border
+    border-color: crimson; */
+    /* Kraci nacin da se zapisu 3 reda iznad */
+    /* border: 3px solid crimson; */
+    /* moze da se dodaje i samo jedna stranica bordera: */
+    border-bottom: 5px solid green;
+    /* solid znaci puna linija */
+    border-left: 5px dashed purple;
+    border-top: 8px dotted red;
+    border-right: 1px solid blue;
+}
+
+li {
+    /*list-style-type: disc; -ovo menja oblik onog buleta ispred - disk je onaj obican difoltni*/
+    list-style-type: none;
+    /*sklanjamo bulete, bude prazno samo*/
+    text-shadow: 2px 2px blue;
+    /*3 vrednosti: offset desno, offset vertikalno, boja*/
+    color: #dedede;
+}
+
+/* Inline elements (HTML) - ne zauzimaju vise mesta nego sto imaju contenta
+   Block elements (HTML) - zauzimaju celu sirinu */
+
+div {
+    /*display: inline; napravice span da zauzima samo koliko mu treba */
+    border: 2px solid crimson;
+    margin: 20px;
+    /*margin-left, right, bottom top*/
+    padding: 20px;
+}
+
+span {
+    /*display: block; /*napravice span da zauzima celu sirinu*/
+    margin: 20px;
+    /*dodalo je samo levo i desno, a ne i gore i dole*/
+    /*margine razlicitih elemenata se preklapaju jedna preko druge
+      tako da razmak izmedju 2 div-a kojima je margin 20px, nece biti
+      40px nego samo 20px, bez obzira sto oba imaju margin po 20px*/
+    padding: 20px;
+    /*padding gore i dole moze da predje prego dugog elementa*/
+}
+
+em {
+    display: inline-block;
+    /*inline-block znaci da ce element i dalje da zauzima samo prostor
+      koji mu je potreban, ali ce da se po pitanju margina ponasa kao
+      block level element sto znaci da cemo moci da m dodajemo margine
+      gode i dole*/
+    margin: 20px;
+    /*sad ce da mu doda 20px i gore i dole umesto samo
+                    levo i desno zbog display: inline-block*/
+}
+
+/* Margin & Padding */
+/* Margin - prostor oko datog elementa
+   Padding - prostor unutar elelemnta
+   Bitno: Kada dodajemo margin i padding block level elementu
+          onda je sve ok i to se sve lepo doda.
+          ALI, ako uradimo ovo kod inline elemenata,
+          MARGINA SE NE DODAJE GORE I DOLE KOD INLINE ELEMENATA
+          DODAJE SE SAMO LEVO I DESNO
+          Padding moze da se dodaje normalno u oba slucaja (block i inline)*/
+/* Na inspectu: margin - crveno
+                padding - zeleno
+                content - plavo */
+
+/* Default browser styles - kako browser po default-u prikazuje HTML elemente
+   ovo mozemo da vidimo tako sto u inspect-u kliknemo na liniju HTML koda
+   koju zelmo da vidimo i dole u Styles nam se otvori CSS
+   i u gornjem desnom uglu tog prozora pise "user agent stylesheet"
+   sto znaci da se tu koristi stylesheet od user agent-a (sto je browser).
+   Kada je na kliknutu liniju koda primenjen neki nas CSS, pisace
+   nesto drugo, pa ce ispod da bude jos jedan prozor sa user agent stylesheet.
+   Mi user agent stylesheet overwrite-ujemo pisanjem naseg CSS-a*/

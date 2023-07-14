@@ -1,0 +1,31 @@
+
+body {
+    background-color: #eee;
+    color: #333;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 960px;
+}
+
+#blocks {
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+}
+
+#blocks div {
+    flex: 0 0 100px;
+    padding: 40px 0;
+    text-align: center;
+    background-color: #ccc;
+}
+
+/* order se koristi kako bismo zamenili redosled elementima flex-box-a 
+   sto je manji broj to ce pre ici (moze i u minus) 
+   default je 0 */
+.one {order: 3;}
+.two {order: 4;}
+.three {order: 1;}
+.four {order: 2;}

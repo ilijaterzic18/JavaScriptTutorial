@@ -1,0 +1,28 @@
+body {
+    background-color: black;
+}
+.score {
+    color: white;
+}
+#game {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: auto auto auto;
+    /* Koliko stvari smo stavili kod grid-template-columns
+       toliko kolona ce grid imati */
+}
+.card {
+    display: flex;
+    margin: 10px;
+    height: 100px;
+    width: 100px;
+    background-color: green;
+    justify-content: center;
+    align-items: center;
+    /* background-color: none; */
+}
+img {
+    display: none;
+    height: 100px;
+    width: 100px;
+}

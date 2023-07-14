@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;800&family=VT323&display=swap');
+
+body {
+  margin: 30px;
+  font-family: "Poppins";
+}
+/* KADA IDEMO NA INSPECT U GOOGLE CHROM-U, TAMO GDE JE GRID U KODU
+   PISACE NAM GRID I NA TO MOZEMO DA KLIKNEMO DA NAM SE PRIKAZE GRID  */
+
+
+/* ALIGN - vertikalno
+   JUSTIFY - horizontalno*/
+.grid-container {
+  background: #eee;
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  /* ovako se bira broj kolona u gridu */
+  /* grid-template-columns: 300px 300px 300px; */
+  /* kraci nacin za zapisivanje (koliko puta se ponavlja, sta se ponavlja) */
+  /* grid-template-columns: repeat(6, 300px); */
+  grid-template-columns: repeat(6, 1fr);
+  /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; */
+  /* 1fr je jedna frakcija grid-a (u nasem slucaju 900px zbog max width) */
+  grid-template-rows: 100px 200px 300px;
+  /* gap - razmak izmedju svakog reda i kolone */
+  gap: 10px;
+  /* justify-items: stretch; - default */
+  /* justify-items: end; - idu na kraj */
+  /* justify-items: start; */
+  /* justify-items: center; */
+  /* align-items: stretch; - default */
+  /* align-items: start; */
+  /* align-items: end; */
+  /* align-items: bottom; */
+  /* align-items: center; */
+
+}
+
+.grid-container > div {
+  background: #ccc;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #777;
+}
+
+/* uzimamo prvo dete i nesto mu radimo */
+.grid-container div:nth-child(1) {
+  /* grid-column: od koje pozicije krece / koliko je velika */
+  grid-column: 1 / span 2;
+}
+
+.grid-container div:nth-child(2) {
+  /* kad ne dodamo pocetnu poziciju, automatksi pocinje od sledece slobodne pozicije */
+  grid-column: span 3;
+  /* grid-column: 3 / span 3; - isto */
+}
+
+.grid-container div:nth-child(3) {
+  /* ovako je automatski */
+  grid-column: span 1;
+}
+
+.grid-container div:nth-child(4) {
+  /* ovo znaci da ce ici od druge do seste kolone */
+  grid-column: 2 / 6;
+  /* ako zelimo da alajnujemo ili justifyjujemo samo jednog:
+     align-self ili justify-self; */
+  align-self: end;
+}
+
+.grid-container div:nth-child(5) {
+  /* ovo ce otici u sledeci red posto u ovome vise nema mesta za 3 polja */
+  grid-column: span 3;
+}
+
+.grid-container div:nth-child(6) {
+  grid-column: span 3;
+  justify-self: end;
+  align-self: start;
+}

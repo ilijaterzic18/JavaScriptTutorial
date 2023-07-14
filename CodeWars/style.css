@@ -1,0 +1,30 @@
+#kvadrat {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(165, 165, 119);
+    border: 1px solid;
+}
+#veciKvadrat {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(165, 165, 119);
+}
+#slika {
+    width: 300px;
+}
+#slika1 {
+    width: 300px;
+}
+#myDiv {
+    background-color: aqua;
+    width: 1000px;
+    height: 1000px;
+    border: 1px solid;
+    
+}
+#myCanvas {
+    border: 1px solid;
+    /* background-color: skyblue; */
+    height: 500px;
+    width: 500px;
+}

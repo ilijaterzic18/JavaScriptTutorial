@@ -1,0 +1,93 @@
+/* Ovako ce se svi sa klasom error promeniti */
+.error {
+    color: red;
+}
+
+/* Ovako ce se samo p tagovi sa klasom success promeniti */
+p.success {
+    color: green;
+}
+
+/* Ovako ce se samo p tagovi sa obe klase success i feedback promeniti */
+p.success.feedback {
+    color: purple;
+    border: 1px dashed black;
+}
+
+div#content {
+    background-color: #ebebeb;
+    padding: 20px;
+}
+
+/* sve elemente koji su u div-u i imaju klasu .error */
+/* VAZNO: nije isno div.error i div .error sa razmakom izmedju
+          div.error se odnosi na sve divove koji imaju klasu error
+          div .error se odnosi na sve lemente u okviru div-a koji imaju klasu error */
+div .error {
+    color: seagreen;
+}
+
+/* ATTRIBUTE SELECTORS */
+/* ovo ce odabrati sve a tagove koji imaju atribut href */
+a[href] {
+    background-color: purple;
+}
+
+/* svi kojima je href odredjeni link */
+a[href="https://www.google.com/"] {
+    background-color: green;
+    color: white;
+    text-decoration: none;
+    /* sklonice underline */
+    font-weight: bold;
+    text-transform: uppercase;
+    /* sva slova velika */
+}
+
+/* zvezdica znaci da ce se ukljuciti svaki href koji sadrzi naveden tekst */
+a[href*="ninjakitchen"] {
+    background-color: rgb(128, 0, 128);
+    color: darkcyan;
+    border: 5px solid black;
+    text-transform: uppercase;
+    /* sva slova velika */
+}
+
+/* $ bira one koje imaju zadatu vrednost na kraju */
+a[href$=".rs/"] {
+    border: 10px solid rgb(20, 179, 81);
+    color: black;
+}
+
+/* The Cascade */
+/* meaning: from top to bottom
+   HTML elementi nasledjuju CSS propertije koji su pridodati njihovim roditeljima
+   Ne nasledjuju se svi propertiji (margin, padding, borders)
+   Nasledjuju se uglavnom fontovi i text styles*/
+
+
+#drugiDiv {
+    color: lightcoral;
+    /* svi p-ovi koji su deo ovog div-a de da se oboje */
+    border: 2px solid black;
+    /* ovo nece da se nasledi */
+    margin: 40px;
+    /* ovo se nece */
+}
+
+/* ako zelimo da deca naslede elemente roditelja koji se ne nasledjuju */
+#drugiDiv p {
+    border: inherit;
+    margin: inherit;
+    color: crimson; /* ovo ce override-ovati parenta */
+}
+
+/* Ako bismo imali sledeci kod:
+   div p {
+    color: crimson;
+   }
+   p {
+    color: blue;
+   }
+   Bio bi color: crimson, jer je tag specificniji*/
+

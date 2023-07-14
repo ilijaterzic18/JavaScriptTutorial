@@ -1,0 +1,32 @@
+h1{
+    text-align: center;
+}
+#label1{
+    text-align: center;
+    color: rgb(87, 185, 87);
+    font-style: bold;
+}
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: black;
+    color:rgb(136, 19, 109);
+}
+#addNote{
+    display: block;
+    margin: 0 auto;
+    color:rgb(0, 255, 0);
+    background-color: rgb(136, 19, 109);
+    font-style: bold;
+}
+#input{
+    position: center;
+    text-align: center;
+}
+#note{
+    vertical-align: top;  
+    text-align: left;
+    height: 50px;
+    width: 500px;
+    background-color: rgb(41, 41, 228);
+    color: white;
+}
